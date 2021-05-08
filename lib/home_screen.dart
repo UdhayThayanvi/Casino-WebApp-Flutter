@@ -1,3 +1,4 @@
+import 'package:breakpoint/breakpoint.dart';
 import 'package:flutter/material.dart';
 import 'package:web_app/constants.dart';
 import 'package:web_app/sections/about/about_section.dart';
@@ -10,17 +11,21 @@ import 'package:web_app/sections/topSection/top_section.dart';
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    return LayoutBuilder(builder: (_, constraints) {
+      final _breakpoint = Breakpoint.fromConstraints(constraints);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
           children: [
             TopSection(),
-            SizedBox(height: kDefaultPadding * 2),
+            //SizedBox(height: kDefaultPadding * 2),
             AboutSection(),
+            //SizedBox(height: kDefaultPadding * 2),
             ServiceSection(),
-            RecentWorkSection(),
+            //SizedBox(height: kDefaultPadding * 2),
+            //RecentWorkSection(),
             FeedbackSection(),
-            SizedBox(height: kDefaultPadding),
+            //SizedBox(height: kDefaultPadding * 2),
             ContactSection(),
             // This SizeBox just for demo
             // SizedBox(
@@ -30,5 +35,6 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     );
+  });
   }
 }

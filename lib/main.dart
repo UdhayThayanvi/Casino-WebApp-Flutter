@@ -1,9 +1,16 @@
+import 'package:easy_dynamic_theme/easy_dynamic_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:web_app/constants.dart';
 import 'package:web_app/home_screen.dart';
+//import 'package:breakpoint/breakpoint.dart';
 
 void main() {
-  runApp(MyApp());
+  //if (!kIsWeb) PlatformInfo();
+  runApp(
+      EasyDynamicThemeWidget(
+        child: MyApp(),
+      ),
+  );
 }
 
 class MyApp extends StatelessWidget {

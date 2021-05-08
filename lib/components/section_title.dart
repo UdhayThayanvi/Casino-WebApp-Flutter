@@ -6,11 +6,11 @@ class SectionTitle extends StatelessWidget {
   const SectionTitle({
     Key key,
     this.title,
-    this.subTitle,
+    //this.subTitle,
     this.color,
   }) : super(key: key);
 
-  final String title, subTitle;
+  final String title;
   final Color color;
 
   @override
@@ -37,17 +37,17 @@ class SectionTitle extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text(
-                subTitle,
-                style:
-                    TextStyle(fontWeight: FontWeight.w200, color: kTextColor),
-              ),
+              //Text(
+                //subTitle,
+                //style:
+                    //TextStyle(fontWeight: FontWeight.w200, color: kTextColor),
+              //),
               Text(
                 title,
                 style: Theme.of(context)
                     .textTheme
                     .headline2
-                    .copyWith(fontWeight: FontWeight.bold, color: Colors.black),
+                    .copyWith(fontWeight: FontWeight.bold, color: Color(0xFF00B1FF)),
               )
             ],
           )

@@ -16,18 +16,18 @@ class ContactSection extends StatelessWidget {
         color: Color(0xFFE8F0F9),
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage("assets/images/bg_img_2.png"),
+          image: AssetImage("assets/images/sand_background.jpg"),
         ),
       ),
       child: Column(
         children: [
           SizedBox(height: kDefaultPadding * 2.5),
           SectionTitle(
-            title: "Contact Me",
-            subTitle: "For Project inquiry and information",
+            title: "Disclaimer",
+            //subTitle: "For Project inquiry and information",
             color: Color(0xFF07E24A),
           ),
-          ContactBox()
+          ContactBox(size: 0)
         ],
       ),
     );
@@ -37,129 +37,36 @@ class ContactSection extends StatelessWidget {
 class ContactBox extends StatelessWidget {
   const ContactBox({
     Key key,
+    @required this.size,
   }) : super(key: key);
+
+  final int size;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints: BoxConstraints(maxWidth: 1110),
+      width: 1300,
+      //constraints: BoxConstraints(maxWidth: 1200),
       margin: EdgeInsets.only(top: kDefaultPadding * 2),
-      padding: EdgeInsets.all(kDefaultPadding * 3),
+      padding: EdgeInsets.all(kDefaultPadding * 5),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Colors.black87,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(20),
-          topRight: Radius.circular(20),
+          topLeft: Radius.circular(0),
+          topRight: Radius.circular(0),
         ),
       ),
-      child: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              SocalCard(
-                color: Color(0xFFD9FFFC),
-                iconSrc: "assets/images/skype.png",
-                name: 'TheFlutterWay',
-                press: () {},
-              ),
-              SocalCard(
-                color: Color(0xFFE4FFC7),
-                iconSrc: "assets/images/whatsapp.png",
-                name: 'TheFlutterWay',
-                press: () {},
-              ),
-              SocalCard(
-                color: Color(0xFFE8F0F9),
-                iconSrc: "assets/images/messanger.png",
-                name: 'TheFlutterWay',
-                press: () {},
-              ),
-            ],
-          ),
-          SizedBox(height: kDefaultPadding * 2),
-          ContactForm(),
-        ],
-      ),
-    );
-  }
-}
-
-class ContactForm extends StatelessWidget {
-  const ContactForm({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Form(
-      child: Wrap(
-        spacing: kDefaultPadding * 2.5,
-        runSpacing: kDefaultPadding * 1.5,
-        children: [
-          SizedBox(
-            width: 470,
-            child: TextFormField(
-              onChanged: (value) {},
-              decoration: InputDecoration(
-                labelText: "Your Name",
-                hintText: "Enter Your Name",
-              ),
-            ),
-          ),
-          SizedBox(
-            width: 470,
-            child: TextFormField(
-              onChanged: (value) {},
-              decoration: InputDecoration(
-                labelText: "Email Address",
-                hintText: "Enter your email address",
-              ),
-            ),
-          ),
-          SizedBox(
-            width: 470,
-            child: TextFormField(
-              onChanged: (value) {},
-              decoration: InputDecoration(
-                labelText: "Project Type",
-                hintText: "Select Project Type",
-              ),
-            ),
-          ),
-          SizedBox(
-            width: 470,
-            child: TextFormField(
-              onChanged: (value) {},
-              decoration: InputDecoration(
-                labelText: "Project Budget",
-                hintText: "Select Project Budget",
-              ),
-            ),
-          ),
-          SizedBox(
-            // height: 300,
-            // TextField by default cover the height, i tryed to fix this problem but i cant
-            child: TextFormField(
-              onChanged: (value) {},
-              decoration: InputDecoration(
-                labelText: "Description",
-                hintText: "Write some description",
-              ),
-            ),
-          ),
-          SizedBox(height: kDefaultPadding * 2),
-          Center(
-            child: FittedBox(
-              child: DefaultButton(
-                imageSrc: "assets/images/contact_icon.png",
-                text: "Contact Me!",
-                press: () {},
-              ),
-            ),
-          )
-        ],
-      ),
+      child: Text(
+        "The content shared on this website is for information purpose only and thus should not be considered as financial advice. Trading/Investing is risky and you should never invest more than you can afford to lose. Cryptocurrencies are risky. Never invest more than you can afford to lose. You alone assume the sole responsibility of evaluating the merits and risks associated with the use of any information or other content on the site before making any decisions based on such information or other content.",
+        textAlign: TextAlign.center,
+        //textHeightBehavior: TextHeightBehavior.fromEncoded(10),
+        style: (TextStyle(
+          color: Colors.white38,
+          fontSize: 15,
+          fontWeight: FontWeight.w300,
+        )
+        )
+      )
     );
   }
 }

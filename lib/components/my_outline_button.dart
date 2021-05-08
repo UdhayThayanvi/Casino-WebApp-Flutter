@@ -24,16 +24,22 @@ class MyOutlineButton extends StatelessWidget {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(50),
         ),
-        borderSide: BorderSide(color: Color(0xFFEDEDED)),
+        borderSide: BorderSide(color: Colors.white),
         onPressed: press,
         child: Row(
           children: [
             Image.asset(
               imageSrc,
-              height: 40,
+              height: 70,
+              width: 50,
+              //color: Colors.cyan[300].withAlpha(50),
+              //colorBlendMode: BlendMode.dstATop,
             ),
             SizedBox(width: kDefaultPadding),
-            Text(text)
+            Text(text,
+            style: TextStyle(
+              color: Colors.white,
+            ))
           ],
         ),
       ),

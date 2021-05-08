@@ -29,7 +29,7 @@ class RecentWorkSection extends StatelessWidget {
           ),
           SectionTitle(
             title: "Recent Woorks",
-            subTitle: "My Strong Arenas",
+            //subTitle: "My Strong Arenas",
             color: Color(0xFFFFB100),
           ),
           SizedBox(height: kDefaultPadding * 1.5),

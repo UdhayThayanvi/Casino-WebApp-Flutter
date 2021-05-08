@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:web_app/models/Service.dart';
 
@@ -41,33 +42,16 @@ class _ServiceCardState extends State<ServiceCard> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            AnimatedContainer(
-              duration: duration,
-              padding: EdgeInsets.all(kDefaultPadding * 1.5),
-              height: 120,
-              width: 120,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                shape: BoxShape.circle,
-                boxShadow: [
-                  if (!isHover)
-                    BoxShadow(
-                      offset: Offset(0, 20),
-                      blurRadius: 30,
-                      color: Colors.black.withOpacity(0.1),
-                    ),
-                ],
-              ),
-              child: Image.asset(
-                services[widget.index].image,
-                fit: BoxFit.fill,
-              ),
+            Text(
+              services[widget.index].title,
+              style: TextStyle(fontSize: 30,
+              fontWeight: FontWeight.bold),
             ),
             SizedBox(height: kDefaultPadding),
             Text(
-              services[widget.index].title,
-              style: TextStyle(fontSize: 22),
-            ),
+              services[widget.index].description,
+              style: TextStyle(fontSize: 15)
+            )
           ],
         ),
       ),

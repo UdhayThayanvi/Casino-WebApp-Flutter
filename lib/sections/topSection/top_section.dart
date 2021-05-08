@@ -13,12 +13,12 @@ class TopSection extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       alignment: Alignment.center,
-      constraints: BoxConstraints(maxHeight: 900, minHeight: 700),
+      constraints: BoxConstraints(maxHeight: 800, minHeight: 700),
       width: double.infinity,
       decoration: BoxDecoration(
         image: DecorationImage(
           fit: BoxFit.cover,
-          image: AssetImage("assets/images/background.png"),
+          image: AssetImage("assets/images/white_dice.jpg"),
         ),
       ),
       child: Container(
@@ -27,13 +27,15 @@ class TopSection extends StatelessWidget {
         child: Stack(
           children: [
             LogoAndBlurBox(size: size),
+            //Positioned(
+              //top: 100,
+              //left: 10,
+              //child: PersonPic(),
+                //),
             Positioned(
-              bottom: 0,
+              top: 0,
+              left: 0,
               right: 0,
-              child: PersonPic(),
-            ),
-            Positioned(
-              bottom: 0,
               child: Menu(),
             ),
           ],

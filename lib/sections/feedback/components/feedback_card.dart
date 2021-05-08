@@ -28,21 +28,27 @@ class _FeedbackCardState extends State<FeedbackCard> {
           isHover = value;
         });
       },
-      child: AnimatedContainer(
+      child: Column(
+        //crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        AnimatedContainer(
         duration: duration,
         margin: EdgeInsets.only(top: kDefaultPadding * 3),
-        padding: EdgeInsets.symmetric(horizontal: kDefaultPadding),
-        height: 350,
-        width: 350,
+        padding: EdgeInsets.symmetric(vertical: kDefaultPadding),
+        height: 300,
+        width: 400,
         decoration: BoxDecoration(
           color: feedbacks[widget.index].color,
           borderRadius: BorderRadius.circular(10),
           boxShadow: [if (isHover) kDefaultCardShadow],
         ),
-        child: Column(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Transform.translate(
-              offset: Offset(0, -55),
+              offset: Offset(-100, -30),
               child: AnimatedContainer(
                 duration: duration,
                 height: 100,
@@ -63,17 +69,19 @@ class _FeedbackCardState extends State<FeedbackCard> {
                 color: kTextColor,
                 fontSize: 18,
                 fontWeight: FontWeight.w300,
-                fontStyle: FontStyle.italic,
+                //fontStyle: FontStyle.italic,
                 height: 1.5,
               ),
             ),
             SizedBox(height: kDefaultPadding * 2),
-            Text(
-              "Ronald Thompson",
-              style: TextStyle(fontWeight: FontWeight.bold),
-            )
+            //Text(
+              //"Ronald Thompson",
+              //style: TextStyle(fontWeight: FontWeight.bold),
+            //)
           ],
         ),
+      ),
+      ],
       ),
     );
   }
